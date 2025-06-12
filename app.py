@@ -9,6 +9,8 @@ from utils.exceptions import ConnectionTerminated, PathNotFound
 
 def create_app():
     app = Flask(__name__)
+    app.config['ENV'] = 'production'
+    app.config['DEBUG'] = False
     
     # Ignore Chrome DevTools requests
     @app.before_request
@@ -81,4 +83,4 @@ def create_app():
 
 if __name__ == '__main__':
     app = create_app()
-    app.run(debug=True)
+    app.run()
