@@ -1,0 +1,90 @@
+:root {
+    /* Color System */
+    --primary-100: #EBF5FF;
+    --primary-200: #B4DAFF;
+    --primary-300: #7DBFFF;
+    --primary-400: #4AA4FF;
+    --primary-500: #1A89FF;
+    --primary-600: #0070E0;
+    --primary-700: #0058B3;
+    --primary-800: #004085;
+    --primary-900: #002857;
+
+    /* Neutral Colors */
+    --neutral-100: #FFFFFF;
+    --neutral-200: #F8FAFC;
+    --neutral-300: #E2E8F0;
+    --neutral-400: #CBD5E1;
+    --neutral-500: #94A3B8;
+    --neutral-600: #64748B;
+    --neutral-700: #475569;
+    --neutral-800: #27364B;
+    --neutral-900: #0F172A;
+
+    /* Success Colors */
+    --success-100: #DCFCE7;
+    --success-500: #22C55E;
+    --success-700: #15803D;
+
+    /* Error Colors */
+    --error-100: #FEE2E2;
+    --error-500: #EF4444;
+    --error-700: #B91C1C;
+
+    /* Warning Colors */
+    --warning-100: #FEF3C7;
+    --warning-500: #F59E0B;
+    --warning-700: #B45309;
+
+    /* Theme Variables */
+    --bg-primary: var(--neutral-100);
+    --bg-secondary: var(--neutral-200);
+    --text-primary: var(--neutral-900);
+    --text-secondary: var(--neutral-600);
+    --primary-color: var(--primary-500);
+    --primary-dark: var(--primary-700);
+    --border-color: var(--neutral-300);
+    --shadow-color: rgba(15, 23, 42, 0.08);
+
+    /* Typography */
+    --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2rem;
+    --space-6: 3rem;
+    --space-7: 4rem;
+    --space-8: 6rem;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+    --radius-full: 9999px;
+
+    /* Transitions */
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+
+    /* Z-index */
+    --z-navbar: 100;
+    --z-dropdown: 200;
+    --z-modal: 300;
+    --z-tooltip: 400;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --bg-primary: var(--neutral-900);
+    --bg-secondary: var(--neutral-800);
+    --text-primary: var(--neutral-100);
+    --text-secondary: var(--neutral-400);
+    --border-color: var(--neutral-700);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}

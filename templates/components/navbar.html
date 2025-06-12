@@ -1,0 +1,328 @@
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="/" class="brand-link">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="MyAna Logo" class="nav-logo">
+                <span class="brand-text">MyAna AI</span>
+            </a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <div class="nav-menu" id="navMenu">
+            <div class="nav-links">
+                <a href="/" class="nav-item {{ 'active' if request.endpoint == 'home' }}">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="/chat" class="nav-item {{ 'active' if request.endpoint == 'chat' }}">
+                    <i class="fas fa-comments"></i> Chat
+                </a>
+                <a href="/about" class="nav-item {{ 'active' if request.endpoint == 'about' }}">
+                    <i class="fas fa-info-circle"></i> About
+                </a>
+             
+            </div>
+            <div class="theme-header">
+                    <div class="theme-selector">
+                        <select id="themeSelect" class="theme-dropdown">
+                            <option value="purple">💜 Purple Theme</option>
+                            <option value="brown">🤎 Brown Theme</option>
+                            <option value="green">💚 Green Theme</option>
+                            <option value="orange">🧡 Orange Theme</option>
+                            <option value="red">❤️ Red Theme</option>
+                        </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+
+    // Hamburger menu toggle
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Dropdown functionality
+    dropdowns.forEach(dropdown => {
+        const btn = dropdown.querySelector('.dropdown-btn');
+        
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent click from bubbling to document
+            
+            // Close other dropdowns
+            dropdowns.forEach(other => {
+                if (other !== dropdown) {
+                    other.classList.remove('active');
+                }
+            });
+            
+            dropdown.classList.toggle('active');
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dropdown')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+
+    // Close dropdowns and menu when clicking a dropdown link
+    document.querySelectorAll('.dropdown-content a').forEach(link => {
+        link.addEventListener('click', () => {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+});
+</script>
+
+<style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+.navbar {
+    /* text-decoration: none   ; */
+    background: var(--navbar-bg);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.theme-selector {
+    display: flex;
+    gap: 0.5rem;
+    /* padding: 0.5rem; */
+    /* background: var(--bg-secondary); */
+    border-radius: 8px;
+}
+
+.theme-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.theme-btn.active {
+    color: var(--accent-color);
+    background: var(--bg-primary);
+}
+
+.nav-item {
+    color: var(--text-primary);
+}
+
+.nav-item:hover {
+    background: var(--bg-secondary);
+    color: var(--accent-color);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-primary);
+    gap: 0.5rem;
+}
+
+.nav-logo {
+    height: 40px;
+    width: auto;
+}
+
+.brand-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-item {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.nav-item.active {
+    background: var(--bg-secondary);
+    color: var(--accent-color);
+}
+
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: var(--bg-secondary);
+    color: var(--accent-color);
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--bg-primary);
+    min-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.nav-dropdown.active .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background: var(--bg-secondary);
+    color: var(--accent-color);
+}
+
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--text-primary);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--navbar-bg);
+        padding: 1rem;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-dropdown {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        box-shadow: none;
+        background: var(--bg-secondary);
+    }
+
+    .nav-dropdown.active .dropdown-content {
+        display: block;
+    }
+}
+
+</style>

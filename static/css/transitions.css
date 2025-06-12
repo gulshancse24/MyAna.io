@@ -1,0 +1,23 @@
+/* Add smooth transitions for theme changes */
+*,
+*::before,
+*::after {
+    transition: background-color var(--transition-speed),
+                border-color var(--transition-speed),
+                color var(--transition-speed),
+                box-shadow var(--transition-speed);
+}
+
+/* Elements that shouldn't transition */
+.no-transition {
+    transition: none !important;
+}
+
+/* Theme toggle button animation */
+.theme-toggle i {
+    transition: transform 0.5s ease;
+}
+
+.theme-toggle:hover i {
+    transform: rotate(360deg);
+}

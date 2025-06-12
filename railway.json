@@ -1,0 +1,12 @@
+{
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "pip install -r requirements.txt"
+  },
+  "run": {
+    "command": "gunicorn app:app",
+    "env": {
+      "FLASK_ENV": "production"
+    }
+  }
+}

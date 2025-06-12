@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - MyAna AI{% endblock %}
+
+{% block content %}
+<section class="contact-hero">
+    <div class="container">
+        <h1 data-aos="fade-up">Get in Touch</h1>
+        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">We'd love to hear from you. Let's start a conversation.</p>
+    </div>
+    <div class="hero-shape"></div>
+</section>
+
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-wrapper">
+            <!-- Contact Information -->
+            <div class="contact-info" data-aos="fade-right">
+                <div class="info-card">
+                    <h2>Contact Information</h2>
+                    <p class="info-subtitle">Get in touch with us through any of these channels</p>
+                    
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="icon-circle">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Location</h3>
+                                <p>123 AI Street, Tech Valley</p>
+                                <p>Silicon City, 400001</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-circle">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Email</h3>
+                                <p><a href="mailto:gulshankumargaurav54@gmail.com">gulshankumargaurav54@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-circle">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Phone</h3>
+                                <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form" data-aos="fade-left">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <div class="input-group">
+                            <i class="fas fa-heading"></i>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <div class="input-group">
+                            <i class="fas fa-comment-alt"></i>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

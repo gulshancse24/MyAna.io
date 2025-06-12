@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Chat with MyAna{% endblock %}
+
+{% block content %}
+<div class="chat-wrapper">
+    <!-- Chat Container -->
+    <div class="chat-container">
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <div class="header-content">
+                <div class="bot-info">
+                    <div class="bot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="bot-details">
+                        <h1>Ana</h1>
+                        <p>Your AI Assistant</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Messages Area -->
+        <div id="messageArea" class="chat-messages">
+            <!-- Welcome Message -->
+            <div class="welcome-message">
+                <div class="welcome-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h2>Hi there! 👋 I'm Ana</h2>
+                <p>I'm delighted to help you today! ✨ Feel free to ask me anything - from simple questions to complex problems. I'll do my best to assist you with a smile! 💝</p>
+            </div>
+        </div>
+
+        <!-- Chat Input Form -->
+        <div class="chat-input-wrapper">
+            <form id="chatForm" class="chat-input">
+                <div class="input-group">
+                    <!-- Voice Input Button -->
+                    <button type="button" id="voiceInputBtn" class="voice-btn" title="Voice Input">
+                        <i class="fas fa-microphone"></i>
+                        <span class="btn-ripple"></span>
+                    </button>
+                    
+                    <!-- Text Input -->
+                    <input 
+                        type="text" 
+                        id="userInput" 
+                        placeholder="Type your message..." 
+                        autocomplete="off" 
+                        required
+                    >
+
+                    <!-- Send Button -->
+                    <button type="submit" id="sendBtn" class="send-btn" title="Send Message">
+                        <i class="fas fa-paper-plane"></i>
+                        <span class="btn-ripple"></span>
+                    </button>
+
+                    <!-- Speaker Button -->
+                    <button type="button" id="speakerBtn" class="speaker-btn" title="Text-to-Speech">
+                        <i class="fas fa-volume-up"></i>
+                        <span class="btn-ripple"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+<script src="{{ url_for('static', filename='js/voice-handler.js') }}"></script>
+{% endblock %}

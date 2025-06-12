@@ -1,0 +1,303 @@
+:root {
+    --navbar-height: 70px;
+    /* Light theme (default) */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+    --border-color: #e2e8f0;
+    --navbar-bg: rgba(255, 255, 255, 0.95);
+    --card-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --primary-color: #4a90e2;
+
+    /* Light theme colors */
+    --link-color: #4a90e2;
+    --link-hover: #357abd;
+    --link-active: #2563eb;
+    --link-visited: #6366f1;
+    --button-bg: #4a90e2;
+    --button-hover: #357abd;
+    --button-text: #ffffff;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a202c;
+    --bg-secondary: #2d3748;
+    --text-primary: #f7fafc;
+    --text-secondary: #e2e8f0;
+    --border-color: #4a5568;
+    --navbar-bg: rgba(26, 32, 44, 0.95);
+    --card-bg: #2d3748;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+
+    /* Dark theme colors */
+    --link-color: #60a5fa;
+    --link-hover: #93c5fd;
+    --link-active: #3b82f6;
+    --link-visited: #818cf8;
+    --button-bg: #3b82f6;
+    --button-hover: #60a5fa;
+    --button-text: #ffffff;
+}
+
+[data-theme="blue"] {
+    /* Blue theme colors */
+    --link-color: #38bdf8;
+    --link-hover: #7dd3fc;
+    --link-active: #0284c7;
+    --link-visited: #0ea5e9;
+    --button-bg: #0ea5e9;
+    --button-hover: #38bdf8;
+    --button-text: #ffffff;
+}
+
+/* Brown Theme */
+[data-theme="brown"] {
+    --primary-color: #8B4513;
+    --primary-light: #DEB887;
+    --primary-dark: #654321;
+    --accent-color: #D2691E;
+    --bg-primary: #FFF8DC;
+    --bg-secondary: #FAEBD7;
+    --text-primary: #3E2723;
+    --text-secondary: #5D4037;
+}
+
+/* Green Theme */
+[data-theme="green"] {
+    --primary-color: #2E7D32;
+    --primary-light: #81C784;
+    --primary-dark: #1B5E20;
+    --accent-color: #43A047;
+    --bg-primary: #F1F8E9;
+    --bg-secondary: #E8F5E9;
+    --text-primary: #1B5E20;
+    --text-secondary: #388E3C;
+}
+
+/* Purple Theme */
+[data-theme="purple"] {
+    --primary-color: #6A1B9A;
+    --primary-light: #BA68C8;
+    --primary-dark: #4A148C;
+    --accent-color: #8E24AA;
+    --bg-primary: #F3E5F5;
+    --bg-secondary: #EDE7F6;
+    --text-primary: #4A148C;
+    --text-secondary: #6A1B9A;
+}
+
+/* Orange Theme */
+[data-theme="orange"] {
+    --primary-color: #EF6C00;
+    --primary-light: #FFB74D;
+    --primary-dark: #E65100;
+    --accent-color: #FB8C00;
+    --bg-primary: #FFF3E0;
+    --bg-secondary: #FFE0B2;
+    --text-primary: #E65100;
+    --text-secondary: #F57C00;
+}
+
+/* Red Theme */
+[data-theme="red"] {
+    --primary-color: #C62828;
+    --primary-light: #EF5350;
+    --primary-dark: #B71C1C;
+    --accent-color: #D32F2F;
+    --bg-primary: #FFEBEE;
+    --bg-secondary: #FFCDD2;
+    --text-primary: #B71C1C;
+    --text-secondary: #C62828;
+}
+
+/* Reset default outline */
+* {
+    outline: none !important;
+}
+
+/* Interactive Elements Base Styles */
+a, 
+button,
+input,
+select,
+textarea {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+/* Theme-specific focus styles without visible outline */
+[data-theme="purple"] .interactive:focus {
+    background-color: rgba(106, 27, 154, 0.05);
+    border-color: #6A1B9A20;
+}
+
+[data-theme="brown"] .interactive:focus {
+    background-color: rgba(139, 69, 19, 0.05);
+    border-color: #8B451320;
+}
+
+[data-theme="green"] .interactive:focus {
+    background-color: rgba(46, 125, 50, 0.05);
+    border-color: #2E7D3220;
+}
+
+[data-theme="orange"] .interactive:focus {
+    background-color: rgba(239, 108, 0, 0.05);
+    border-color: #EF6C0020;
+}
+
+[data-theme="red"] .interactive:focus {
+    background-color: rgba(198, 40, 40, 0.05);
+    border-color: #C6282820;
+}
+
+/* Link and Interactive Element Outlines */
+a, 
+button,
+input,
+select,
+textarea {
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Theme-specific focus outlines */
+[data-theme="purple"] a:focus,
+[data-theme="purple"] button:focus,
+[data-theme="purple"] input:focus,
+[data-theme="purple"] select:focus,
+[data-theme="purple"] textarea:focus {
+    box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.4);
+    border-color: #6A1B9A;
+}
+
+[data-theme="brown"] a:focus,
+[data-theme="brown"] button:focus,
+[data-theme="brown"] input:focus,
+[data-theme="brown"] select:focus,
+[data-theme="brown"] textarea:focus {
+    box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.4);
+    border-color: #8B4513;
+}
+
+[data-theme="green"] a:focus,
+[data-theme="green"] button:focus,
+[data-theme="green"] input:focus,
+[data-theme="green"] select:focus,
+[data-theme="green"] textarea:focus {
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.4);
+    border-color: #2E7D32;
+}
+
+[data-theme="orange"] a:focus,
+[data-theme="orange"] button:focus,
+[data-theme="orange"] input:focus,
+[data-theme="orange"] select:focus,
+[data-theme="orange"] textarea:focus {
+    box-shadow: 0 0 0 3px rgba(239, 108, 0, 0.4);
+    border-color: #EF6C00;
+}
+
+[data-theme="red"] a:focus,
+[data-theme="red"] button:focus,
+[data-theme="red"] input:focus,
+[data-theme="red"] select:focus,
+[data-theme="red"] textarea:focus {
+    box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.4);
+    border-color: #C62828;
+}
+
+/* Enhanced focus visibility for accessibility */
+:focus-visible {
+    outline: none;
+    border-radius: var(--radius-sm);
+    transition: box-shadow 0.2s ease;
+}
+
+/* Interactive element hover effects */
+a:hover,
+button:hover {
+    transform: translateY(-1px);
+}
+
+/* Active state effect */
+a:active,
+button:active {
+    transform: translateY(1px);
+}
+
+/* Specific styles for inputs and selects */
+.theme-dropdown,
+input[type="text"],
+textarea {
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+}
+
+.theme-dropdown:focus,
+input[type="text"]:focus,
+textarea:focus {
+    background: var(--bg-primary);
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+/* Purple Theme Selection */
+[data-theme="purple"] ::selection {
+    background-color: rgba(106, 27, 154, 0.3);
+    color: var(--text-primary);
+}
+
+/* Brown Theme Selection */
+[data-theme="brown"] ::selection {
+    background-color: rgba(139, 69, 19, 0.3);
+    color: var(--text-primary);
+}
+
+/* Green Theme Selection */
+[data-theme="green"] ::selection {
+    background-color: rgba(46, 125, 50, 0.3);
+    color: var(--text-primary);
+}
+
+/* Orange Theme Selection */
+[data-theme="orange"] ::selection {
+    background-color: rgba(239, 108, 0, 0.3);
+    color: var(--text-primary);
+}
+
+/* Red Theme Selection */
+[data-theme="red"] ::selection {
+    background-color: rgba(198, 40, 40, 0.3);
+    color: var(--text-primary);
+}
+
+/* Firefox Support */
+[data-theme="purple"] ::-moz-selection {
+    background-color: rgba(106, 27, 154, 0.3);
+    color: var(--text-primary);
+}
+
+[data-theme="brown"] ::-moz-selection {
+    background-color: rgba(139, 69, 19, 0.3);
+    color: var(--text-primary);
+}
+
+[data-theme="green"] ::-moz-selection {
+    background-color: rgba(46, 125, 50, 0.3);
+    color: var(--text-primary);
+}
+
+[data-theme="orange"] ::-moz-selection {
+    background-color: rgba(239, 108, 0, 0.3);
+    color: var(--text-primary);
+}
+
+[data-theme="red"] ::-moz-selection {
+    background-color: rgba(198, 40, 40, 0.3);
+    color: var(--text-primary);
+}

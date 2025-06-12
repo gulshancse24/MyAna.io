@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+
+{% block title %}MyAna AI - Intelligent Chat Assistant{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content" data-aos="fade-up">
+        <div class="hero-text">
+            <h1>Experience the Future of AI Chat</h1>
+            <p>Connect with MyAna, your intelligent AI companion that understands and learns from every conversation</p>
+        </div>
+<div class="hero-buttons">
+    <a href="/chat" class="btn-chat primary pulsse">
+        <i class="fas fa-comments"></i>
+        Start Chatting
+    </a>
+    <a href="#features" class="btn-chat secondary">
+        <i class="fas fa-arrow-down bounce"></i>
+        Explore Features
+    </a>
+</div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">10K+</span>
+                <span class="stat-label">Active Users</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1M+</span>
+                <span class="stat-label">Conversations</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Availability</span>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="hero-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div> -->
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Why Choose MyAna?</h2>
+        <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Advanced AI</h3>
+                <p>Powered by cutting-edge machine learning for natural conversations</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3>Secure Chat</h3>
+                <p>End-to-end encryption keeps your conversations private</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Multi-Language</h3>
+                <p>Communicate in over 50 different languages</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Always Available</h3>
+                <p>Get instant responses any time, day or night</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section class="how-it-works">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">How It Works</h2>
+        <div class="steps">
+            <div class="step" data-aos="fade-right">
+                <div class="step-number">1</div>
+                <h3>Start Chat</h3>
+                <p>Click the chat button to begin your conversation with MyAna</p>
+            </div>
+            <div class="step" data-aos="fade-right" data-aos-delay="100">
+                <div class="step-number">2</div>
+                <h3>Ask Anything</h3>
+                <p>Type your questions or share your thoughts naturally</p>
+            </div>
+            <div class="step" data-aos="fade-right" data-aos-delay="200">
+                <div class="step-number">3</div>
+                <h3>Get Smart Responses</h3>
+                <p>Receive intelligent, contextual answers instantly</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section" id="testimonials">
+    <div class="container">
+        <div class="testimonials-header">
+            <h2 class="section-title">What Our Users Say</h2>
+            <button id="addTestimonialBtn" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Add Testimonial
+            </button>
+        </div>
+
+        <!-- Modal for testimonial form -->
+        <div id="testimonialModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Share Your Experience</h3>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <form id="testimonialForm" class="testimonial-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <div class="rating">
+                            <i class="fas fa-star rating-star" data-rating="1"></i>
+                            <i class="fas fa-star rating-star" data-rating="2"></i>
+                            <i class="fas fa-star rating-star" data-rating="3"></i>
+                            <i class="fas fa-star rating-star" data-rating="4"></i>
+                            <i class="fas fa-star rating-star" data-rating="5"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-submit">Submit Testimonial</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="testimonialsList" class="testimonials-grid">
+            <!-- Testimonials will be loaded here -->
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-content" data-aos="zoom-in">
+            <h2>Ready to Start?</h2>
+            <p>Join thousands of users already chatting with MyAna</p>
+            <a href="/chat" class="btn-primary">
+                <i class="fas fa-rocket"></i> Launch Chat
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block custom_js %}
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}
